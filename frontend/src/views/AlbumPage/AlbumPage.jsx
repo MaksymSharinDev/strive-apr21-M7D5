@@ -31,8 +31,11 @@ const AlbumPage = ({match, album, fetchAlbum , fetchedData , setAlbum}) => {
 
   useEffect(() => {
     fetchAlbum(match.params.id)
-    setAlbum( fetchedData )
+
   }, []);
+  useEffect(() => {
+    setAlbum( fetchedData )
+  }, [fetchedData]);
 
   return (
     <div className="album__wrap">
