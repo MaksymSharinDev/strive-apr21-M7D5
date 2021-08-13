@@ -1,10 +1,10 @@
 import {initialState} from "../../store"
 
-const albumReducer = ( state = initialState.album , action ) => {
+const artistReducer = ( state = initialState.artist , action ) => {
     let { type , payload } = action
     switch ( type ){
         // case '': return
-        case 'SET_CURRENT_ALBUM':
+        case 'SET_CURRENT_ARTIST':
             let current = payload
             return {
                 ...state,
@@ -14,5 +14,5 @@ const albumReducer = ( state = initialState.album , action ) => {
             return state
     }
 }
-export default albumReducer
+export default artistReducer
 

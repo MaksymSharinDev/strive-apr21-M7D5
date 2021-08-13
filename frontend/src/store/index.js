@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 
 import apiReducer from "../apicalls/reducer";
 import albumReducer from "../views/AlbumPage/reducer";
+import artistReducer from "../views/ArtistPage/reducer";
 //import playerReducer from "../components/Player/reducer";
 //import <example>Reducer from "./componentName/reducer.js";
 export const initialState = {
@@ -21,7 +22,10 @@ export const initialState = {
     songPlayer : {},
     album: {
         current : {}
-    }
+    },
+    artist: {
+        current : {}
+    },
 };
 
 
@@ -32,7 +36,8 @@ const allEnhancers = composeEnhancers(applyMiddleware(thunk))
 const allReducer = combineReducers({
     apiData : apiReducer,
     // songPlayer: playerReducer,
-    album : albumReducer
+    album : albumReducer,
+    artist: artistReducer,
     /*
     stateSliceName : <example>Reducer
     anotherStateSliceName :  <anotherExample>Reducer
