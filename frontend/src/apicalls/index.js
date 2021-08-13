@@ -1,3 +1,7 @@
+//TODO ref: redux-thunk
+// convert fetching to redux actions
+// so create a reducer and refactor this as actions exports file
+
 export const fetchMusic = async(query) => { //query is a string
     //https://striveschool-api.herokuapp.com/api/deezer/search?q=whatever
     let response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)

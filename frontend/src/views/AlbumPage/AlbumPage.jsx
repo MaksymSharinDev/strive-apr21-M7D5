@@ -7,6 +7,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const AlbumPage = (props) => {
+  //TODO AlbumPage reducers and actions
   const [album, setAlbum] = useState({});
   useEffect(() => {
     console.log(props.match)

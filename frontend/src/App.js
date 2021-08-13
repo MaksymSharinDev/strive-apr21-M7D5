@@ -8,6 +8,8 @@ import AlbumPage from './views/AlbumPage/AlbumPage';
 import ArtistPage from './views/ArtistPage/ArtistPage';
 import { useState } from 'react';
 function App() {
+
+
 const [playing, setPlaying] = useState({})
   const handlePlaying = (track) => {
     setPlaying(track)
