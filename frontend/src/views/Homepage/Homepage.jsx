@@ -4,36 +4,28 @@ import {Link} from "react-router-dom"
 import SingleAlbum from "../../components/SingleAlbum/SingleAlbum"
 import Header from "../../components/Header/Header"
 import {connect} from 'react-redux'
-import { fetchPushMusicAction} from "../../apicalls/actions"
+import {fetchPushMusicAction} from "../../apicalls/actions"
 
 const mapDispatchToProps = dispatch => ({
     fetchPushMusic: query => dispatch(fetchPushMusicAction(query))
 })
 
 const mapStateToProps = state => ({
-    musicObjs : state.apiData.musicObjs
+    kesha: state.apiData.musicObjs.filter(obj => obj.query === 'kesha')[0]?.results,
+    maneskin: state.apiData.musicObjs.filter(obj => obj.query === 'maneskin')[0]?.results,
+    greenDay: state.apiData.musicObjs.filter(obj => obj.query === 'bruce springsteen')[0]?.results,
 })
 
 const Homepage =
     ({
          fetchPushMusic,
-         musicObjs
+         kesha, maneskin, greenDay
      }) => {
         useEffect(() => {
             fetchPushMusic("bruce springsteen")
             fetchPushMusic("kesha")
             fetchPushMusic("maneskin")
         }, [])
-        let [kesha, maneskin, greenDay] = []
-        useEffect(() => {
-        [kesha, maneskin, greenDay] = [
-            musicObjs.filter(obj => obj.query === 'kesha')[0]?.results,
-            musicObjs.filter(obj => obj.query === 'maneskin')[0]?.results,
-            musicObjs.filter(obj => obj.query === 'bruce springsteen')[0]?.results,
-        ]
-
-            console.log( kesha, maneskin, greenDay )
-        }, [musicObjs])
 
         return (
             <div className='home__wrap'>
