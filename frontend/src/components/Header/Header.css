@@ -1,0 +1,27 @@
+.header__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+
+    color: white;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+span.header__el {
+    color: rgba(255,255,255, .7);
+    font-weight: normal!important; /* the singleSong css selector span:first-of-type was overriding this prop, so I added !important*/
+    padding-bottom: 10px;
+}
+
+span.selected {
+    color: white; 
+    font-weight: bold!important;
+
+    
+    border-bottom: #1EB955 solid 2px;
+    transition: .2s;
+}

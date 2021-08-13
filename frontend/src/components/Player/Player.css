@@ -1,0 +1,88 @@
+.player__wrap {
+    width: calc(100vw - 20px);
+    height: 100px;
+
+    position: fixed;
+    bottom: 0;
+    padding-right: 20px;
+
+    background-color: #292929;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.central-console {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.central-console > svg {
+    width: 20px;
+    height: 20px;
+}
+
+svg.play {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    border: .5px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+
+    margin-left: 20px;
+}
+
+img.playing {
+    width: 60px;
+    height: 60px;
+}
+
+div.title {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+
+    margin-left: 20px;
+
+}
+
+div.artist {
+    color: grey;
+    margin-left: 20px;
+}
+svg {
+    margin: 5px;
+}
+svg.player__icon {
+    margin-right: 10px;
+}
+
+
+.volume-bar {
+    width: 100px;
+    height: 5px;
+    background-color: grey;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.volume-console {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

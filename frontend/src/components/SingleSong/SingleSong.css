@@ -1,0 +1,33 @@
+.single__wrap {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.title-and-artist {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+
+span:first-of-type {
+    font-weight: bold;
+}
+
+.duration {
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+svg {
+    color: white;
+}

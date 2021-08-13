@@ -1,0 +1,31 @@
+.home__wrap {
+  width: calc(100vw - 200px - 200px); /* 200px is the width of the sidebar, 60px the padding * 2, as it's on both sides.*/
+  height: calc(100vh - 100px - 100px);
+  overflow-x: hidden;
+  position: absolute;
+  left: 200px;
+  padding: 100px;
+  padding-top: 0;
+
+  background: rgb(37, 68, 107);
+  background: linear-gradient(
+    137deg,
+    rgba(37, 68, 107, 1) 0%,
+    rgba(4, 7, 9, 1) 100%
+  );
+}
+.home__line {
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 30px;
+}
+
+h2 {
+    margin-left: 20px; 
+    color: white;
+    font-size: 22pt;
+}

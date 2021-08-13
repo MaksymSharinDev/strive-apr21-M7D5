@@ -1,0 +1,68 @@
+.artist-page__wrap {
+  background-color: #191919;
+
+  width: calc(100vw - 200px);
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+
+  position: absolute;
+  left: 200px;
+  background: rgb(25, 25, 25);
+  padding-bottom: 30px;
+}
+.artist__header {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.header__wrap--art {
+  width: 100%;
+  height: 600px;
+  background: rgb(25, 25, 25);
+  background: linear-gradient(
+    0deg,
+    rgba(25, 25, 25, 1) 15%,
+    rgba(25, 25, 25, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 22pt;
+}
+h1 {
+  color: white;
+}
+
+.listeners {
+  color: white;
+  font-size: 11pt;
+}
+
+.follow__btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px white solid;
+  margin-left: 20px;
+}
+
+.artist__line {
+  width: 90%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  padding: 30px;
+}
+
+.artist__tracks {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 40px;
+  width: 50%;
+}
