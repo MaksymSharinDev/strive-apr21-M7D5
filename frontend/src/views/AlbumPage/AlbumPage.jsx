@@ -6,27 +6,24 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 import SingleSong from "../../components/SingleSong/SingleSong";
 
-//import { fetchAlbum } from "../../apicalls";
-
 import {connect} from 'react-redux'
 import { fetchAlbumAction  } from '../../apicalls/actions'
 import { setCurrentAlbumAction } from './actions'
 
 
 const mapStateToProps  = state => ({
-  //propElementName: state.stateSliceName.ElementName
   album: state.album.current,
   fetchedData : state.apiData.albumObj
 })
 
 const mapDispatchToProps = dispatch => ({
-  //functionName: (data) => dispatch( stuffAction(data) )
+
   fetchAlbum : id => dispatch(fetchAlbumAction(id)),
   setAlbum : album => dispatch(setCurrentAlbumAction( album ))
 })
 
 const AlbumPage = ({match, album, fetchAlbum , fetchedData , setAlbum}) => {
-  //TODO AlbumPage reducers and actions
+
 
 
   useEffect(() => {
@@ -71,22 +68,3 @@ export default connect( mapStateToProps , mapDispatchToProps )( AlbumPage );
 
 //TODO singleSongClick - Player Relationship
 
-
-//HOWTO
-// in ./src/components/component/component.jsx
-
-// import {connect} from 'react-redux'
-// import { stuffAction } from './actions'
-/*
-const mapStateToProps  = state => ({
-    propElementName: state.stateSliceName.ElementName
-})
-const mapDispatchToProps = dispatch => ({
-    functionName: (data) => dispatch( stuffAction(data) )
-})
-*/
-// ... CODE ...  how access global state and state-editing functions
-// this.props.propElementName
-// this.props.functionName() ,
-// ... CODE ...
-// export connect( mapStateToProps , mapDispatchToProps )( component )

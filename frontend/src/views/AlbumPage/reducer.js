@@ -3,7 +3,7 @@ import {initialState} from "../../store"
 const albumReducer = ( state = initialState.album , action ) => {
     let { type , payload } = action
     switch ( type ){
-        // case '': return
+
         case 'SET_CURRENT_ALBUM':
             let current = payload
             return {

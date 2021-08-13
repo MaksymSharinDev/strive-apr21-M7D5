@@ -22,7 +22,6 @@ const mapDispatchToProps = dispatch => ({
 
 
 const ArtistPage = ({match, fetchArtist, fetchedData, setArtist, artist}) => {
-    //TODO AlbumPage reducers and actions
 
     useEffect(() => {
         fetchArtist(match.params.id)
@@ -58,23 +57,3 @@ const ArtistPage = ({match, fetchArtist, fetchedData, setArtist, artist}) => {
     );
 };
 export default  connect( mapStateToProps , mapDispatchToProps )(ArtistPage)
-
-
-//HOWTO
-// in ./src/components/component/component.jsx
-
-// import {connect} from 'react-redux'
-// import { stuffAction } from './actions'
-/*
-const mapStateToProps  = state => ({
-    propElementName: state.stateSliceName.ElementName
-})
-const mapDispatchToProps = dispatch => ({
-    functionName: (data) => dispatch( stuffAction(data) )
-})
-*/
-// ... CODE ...  how access global state and state-editing functions
-// this.propElementName
-// this.functionName() ,
-// ... CODE ...
-// export connect( mapStateToProps , mapDispatchToProps )( component )

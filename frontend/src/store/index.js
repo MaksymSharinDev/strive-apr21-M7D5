@@ -1,8 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-
-
 import apiReducer from "../apicalls/reducer";
 import albumReducer from "../views/AlbumPage/reducer";
 import artistReducer from "../views/ArtistPage/reducer";
