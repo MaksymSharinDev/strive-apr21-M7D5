@@ -1,6 +1,7 @@
 import {initialState} from "../store";
 
-export const apiReducer =
+
+const apiReducer =
     (state = initialState.apiData, action) => {
         const {type, payload} = action;
         switch (type) {
@@ -31,3 +32,5 @@ export const apiReducer =
 
 
     }
+
+export default apiReducer

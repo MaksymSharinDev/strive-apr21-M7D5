@@ -19,7 +19,7 @@ const [playing, setPlaying] = useState({})
       <Route exact path='/' component={Homepage}/>
       <Route path='/' render={()=> <Player song={{title: playing?.title, artist: playing?.artist?.name, demo: playing?.preview, cover: playing?.cover }}/>} />
       <Route path='/' component={Sidebar} />
-      <Route exact path="/album/:id" render={(props)=> <AlbumPage {...props} passSong={handlePlaying}/>} />
+      <Route exact path="/album/:id" render={(props)=> <AlbumPage {...props} />} />
       <Route exact path='/artist/:id' component={ArtistPage} />
     </Router>
   );

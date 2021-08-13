@@ -1,18 +1,39 @@
-import { useEffect, useState } from "react";
 import "./AlbumPage.css";
-import { fetchAlbum } from "../../apicalls";
-import SingleSong from "../../components/SingleSong/SingleSong";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
-import { Link } from "react-router-dom";
-const AlbumPage = (props) => {
+import SingleSong from "../../components/SingleSong/SingleSong";
+
+//import { fetchAlbum } from "../../apicalls";
+
+import {connect} from 'react-redux'
+import { fetchAlbumAction  } from '../../apicalls/actions'
+import { setCurrentAlbumAction } from './actions'
+
+
+const mapStateToProps  = state => ({
+  //propElementName: state.stateSliceName.ElementName
+  album: state.album.current,
+  fetchedData : state.apiData.albumObj
+})
+
+const mapDispatchToProps = dispatch => ({
+  //functionName: (data) => dispatch( stuffAction(data) )
+  fetchAlbum : id => dispatch(fetchAlbumAction(id)),
+  setAlbum : album => dispatch(setCurrentAlbumAction( album ))
+})
+
+const AlbumPage = ({match, album, fetchAlbum , fetchedData , setAlbum}) => {
   //TODO AlbumPage reducers and actions
-  const [album, setAlbum] = useState({});
+
+
   useEffect(() => {
-    console.log(props.match)
-    fetchAlbum(props.match.params.id).then((res) => setAlbum(res));
+    fetchAlbum(match.params.id)
+    setAlbum( fetchedData )
   }, []);
+
   return (
     <div className="album__wrap">
       <div className="album__info">
@@ -33,7 +54,7 @@ const AlbumPage = (props) => {
       <div className="album__tracks">
         {album?.tracks?.data.map((track) => (
           <SingleSong
-            getSong={() => props.passSong({...track, cover: album.cover_medium})}
+
             title={track.title}
             artist={track.artist.name}
             duration={track.duration / 60}
@@ -43,4 +64,26 @@ const AlbumPage = (props) => {
     </div>
   );
 };
-export default AlbumPage;
+export default connect( mapStateToProps , mapDispatchToProps )( AlbumPage );
+
+//TODO singleSongClick - Player Relationship
+
+
+//HOWTO
+// in ./src/components/component/component.jsx
+
+// import {connect} from 'react-redux'
+// import { stuffAction } from './actions'
+/*
+const mapStateToProps  = state => ({
+    propElementName: state.stateSliceName.ElementName
+})
+const mapDispatchToProps = dispatch => ({
+    functionName: (data) => dispatch( stuffAction(data) )
+})
+*/
+// ... CODE ...  how access global state and state-editing functions
+// this.props.propElementName
+// this.props.functionName() ,
+// ... CODE ...
+// export connect( mapStateToProps , mapDispatchToProps )( component )

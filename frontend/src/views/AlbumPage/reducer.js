@@ -1,5 +1,21 @@
-import { initialState } from "../song";
+import {initialState} from "../../store"
 
+const albumReducer = ( state = initialState.album , action ) => {
+    let { type , payload } = action
+    switch ( type ){
+        // case '': return
+        case 'SET_CURRENT_ALBUM':
+            let current = payload
+            return {
+                ...state,
+                current
+            }
+        default:
+            return state
+    }
+}
+export default albumReducer
+/*
 const newMusicArray = (state = initialState, action) => {
   switch (action.type) {
     case "":
@@ -46,3 +62,5 @@ const newMusicArray = (state = initialState, action) => {
       return state;
   }
 };
+
+ */

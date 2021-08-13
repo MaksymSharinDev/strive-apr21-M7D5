@@ -1,10 +1,12 @@
-
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import {apiReducer} from "../apicalls/reducer";
+
+
+
+import apiReducer from "../apicalls/reducer";
+import albumReducer from "../views/AlbumPage/reducer";
+//import playerReducer from "../components/Player/reducer";
 //import <example>Reducer from "./componentName/reducer.js";
-
-
 export const initialState = {
     apiData : {
         musicObjs : [
@@ -15,23 +17,22 @@ export const initialState = {
         ],
         albumObj : {},
         artistObj : {}
+    },
+    songPlayer : {},
+    album: {
+        current : {}
     }
-    /*
-    stateSliceName : {
-        elements: []
-    }
-
-    anotherStateSliceName : {
-        elements: []
-    }
-    */
 };
+
+
 
 // noinspection JSUnresolvedVariable
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const allEnhancers = composeEnhancers(applyMiddleware(thunk))
 const allReducer = combineReducers({
     apiData : apiReducer,
+    // songPlayer: playerReducer,
+    album : albumReducer
     /*
     stateSliceName : <example>Reducer
     anotherStateSliceName :  <anotherExample>Reducer
