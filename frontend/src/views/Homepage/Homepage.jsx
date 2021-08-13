@@ -5,6 +5,9 @@ import { useEffect, useState } from "react"
 import Header from "../../components/Header/Header"
 import {Link} from "react-router-dom"
 const Homepage = () => {
+    //TODO:
+    // Create the reducer and actions for Homepage
+    // [ optional ] get rid of Hardcoded Artists by Random pick
     const [greenDay, setGreenDay] = useState([])
     const [kesha, setKesha] = useState([])
     const [maneskin, setManeskin] = useState([])

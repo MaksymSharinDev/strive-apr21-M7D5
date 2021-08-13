@@ -5,6 +5,7 @@ import SingleAlbum from "../../components/SingleAlbum/SingleAlbum";
 import Button from "../../components/Button/Button"
 import SingleSong from "../../components/SingleSong/SingleSong"
 const ArtistPage = (props) => {
+    //TODO AlbumPage reducers and actions
   const [artist, setArtist] = useState({});
   useEffect(() => {
     fetchArtist(props.match.params.id).then((res) => setArtist(res));
